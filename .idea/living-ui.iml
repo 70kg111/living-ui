@@ -4,5 +4,7 @@
     <content url="file://$MODULE_DIR$" />
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="font_1651796_l03zu5s3mf" level="application" />
+    <orderEntry type="library" name="font_1651796_8yqto66aepd" level="application" />
   </component>
 </module>
