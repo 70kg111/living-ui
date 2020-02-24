@@ -48,5 +48,8 @@ new Vue({
       this.$toast('这里是 message');
     }
   },
+  created(){
+    this.$toast('这里是 message');
+  }
 
 });
