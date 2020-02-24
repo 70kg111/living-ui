@@ -44,12 +44,19 @@ new Vue({
     inputChange(e) {
       console.log(e);
     },
-    showToast(){
-      this.$toast('这里是 message');
+    showToast() {
+      this.$toast(`你的智商目前是${parseInt(Math.random() * 100)}`, {
+        position: 'top',
+        closeButton: {
+          text: '关闭',
+          callback: () => {
+            console.log('点击了关闭');
+          }
+        },
+        autoClose: false,
+        autoCloseDelay: 3
+      });
     }
   },
-  created(){
-    this.$toast('这里是 message');
-  }
 
 });
