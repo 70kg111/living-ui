@@ -33,7 +33,8 @@
       },
       error: {
         type: String
-      }
+      },
+
     }
   };
 </script>

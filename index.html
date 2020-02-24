@@ -52,7 +52,8 @@
 
 <div id="app">
     <div class="box">
-        <g-input value="张三" @change="inputChange"></g-input>
+        <g-input value="张三" @change="inputChange" v-model="message"></g-input>
+        <p>{{message}}</p>
         <g-input value="李四" disabled></g-input>
         <g-input value="王五" readonly></g-input>
         <g-input value="王" error="姓名至少是两个字" ></g-input>
