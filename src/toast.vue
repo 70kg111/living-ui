@@ -1,8 +1,10 @@
 <template>
-    <div class="toast" ref="wrapper" :class="toastClasses">
-        <slot></slot>
-        <div class="line" ref="line"></div>
-        <span class="close" v-if="closeButton" @click="onClickClose">{{closeButton.text}}</span>
+    <div class="wrapper" :class="toastClasses">
+        <div class="toast" ref="toast">
+            <slot></slot>
+            <div class="line" ref="line"></div>
+            <span class="close" v-if="closeButton" @click="onClickClose">{{closeButton.text}}</span>
+        </div>
     </div>
 </template>
 
@@ -55,7 +57,7 @@
       },
       updateStyles() {
         this.$nextTick(() => {
-          this.$refs.line.style.height = `${this.$refs.wrapper.getBoundingClientRect().height}px`;
+          this.$refs.line.style.height = `${this.$refs.toast.getBoundingClientRect().height}px`;
         });
       },
       close() {
@@ -77,11 +79,70 @@
     $font-size: 14px;
     $toast-bg: rgba(0, 0, 0, 0.75);
     $toast-box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.5);
-    .toast {
+    @keyframes slide-up {
+        0% {
+            opacity: 0;
+            transform: translateY(100%);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0%);
+        }
+    }
+
+    @keyframes slide-down {
+        0% {
+            opacity: 0;
+            transform: translateY(-100%);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0%);
+        }
+    }
+
+    @keyframes fade-in {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+
+    .wrapper {
         position: fixed;
-        top: 0;
         left: 50%;
         transform: translateX(-50%);
+
+        &.position-top {
+            top: 5%;
+
+            .toast {
+                animation: slide-down 1s;
+            }
+        }
+
+        &.position-middle {
+            top: 50%;
+            transform: translate(-50%, -50%);
+
+            .toast {
+                animation: fade-in 1s;
+            }
+        }
+
+        &.position-bottom {
+            top: 95%;
+
+            .toast {
+                animation: slide-up 1s;
+            }
+        }
+    }
+
+    .toast {
+        top: 0;
         font-size: $font-size;
         line-height: 1.8;
         min-height: $toast-min-height;
@@ -105,20 +166,6 @@
             height: 100%;
         }
 
-        &.position-top {
-            top: 5%;
-            transform: translateX(-50%);
-        }
 
-        &.position-middle {
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-        }
-
-        &.position-bottom {
-            top: 95%;
-            transform: translateX(-50%);
-        }
     }
 </style>
