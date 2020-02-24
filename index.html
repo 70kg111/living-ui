@@ -47,6 +47,10 @@
             margin: 20px;
         }
 
+        .demo{
+            border: 1px solid blue;
+            min-height: 100px;
+        }
     </style>
 
 </head>
@@ -73,25 +77,39 @@
         </g-button-group>
     </div>
 
-    <g-row gutter="20">
-        <g-col gutter="20"></g-col>
-        <g-col gutter="20"></g-col>
-    </g-row>
-    <g-row gutter="20">
-        <g-col></g-col>
-        <g-col></g-col>
-        <g-col></g-col>
-    </g-row>
-    <g-row gutter="20">
-        <g-col></g-col>
-        <g-col></g-col>
-        <g-col></g-col>
-        <g-col></g-col>
-    </g-row>
-    <g-row>
-        <g-col span="2"></g-col>
-        <g-col span="22" offset="2"></g-col>
-    </g-row>
+    <div class="box">
+        <g-row gutter="20">
+            <g-col>1</g-col>
+            <g-col>2</g-col>
+        </g-row>
+        <g-row gutter="20">
+            <g-col>1</g-col>
+            <g-col>2</g-col>
+            <g-col>3</g-col>
+        </g-row>
+        <g-row gutter="20">
+            <g-col>1</g-col>
+            <g-col>2</g-col>
+            <g-col>3</g-col>
+            <g-col>4</g-col>
+        </g-row>
+        <g-row gutter="20">
+            <g-col span="2">1</g-col>
+            <g-col span="22">2</g-col>
+        </g-row>
+    </div>
+
+    <div class="box">
+        <g-layout>
+            <g-sider>sider</g-sider>
+            <g-layout>
+                <g-header class="demo">header</g-header>
+                <g-content class="demo">content</g-content>
+                <g-footer class="demo">footer</g-footer>
+            </g-layout>
+        </g-layout>
+    </div>
+
 
 </div>
 
