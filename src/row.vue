@@ -1,12 +1,30 @@
 <template>
-    <div class="row">
+    <div class="row" :style="rowStyle">
         <slot></slot>
     </div>
 </template>
 
 <script lang="js">
   export default {
-    name: 'GuluRow'
+    name: 'GuluRow',
+    props: {
+      gutter: {
+        type: [Number, String]
+      }
+    },
+    computed: {
+      rowStyle() {
+        return {
+          marginLeft: -this.gutter / 2 + 'px',
+          marginRight: -this.gutter / 2 + 'px'
+        };
+      }
+    },
+    mounted() {
+      this.$children.forEach((vm) => {
+        vm.gutter = this.gutter;
+      });
+    }
   };
 </script>
 
