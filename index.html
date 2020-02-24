@@ -24,10 +24,6 @@
             --border-color-hover: #666;
         }
 
-        #app {
-            margin: 20px;
-        }
-
         body {
             font-size: var(--font-size);
             font-family: Consolas, "Microsoft YaHei UI", monospace;
@@ -41,10 +37,6 @@
             vertical-align: -0.15em;
             fill: currentColor;
             overflow: hidden;
-        }
-
-        .box {
-            margin: 20px;
         }
 
         .sider{
@@ -62,12 +54,15 @@
             background: #666666;
             height: 100px;
         }
+
+
     </style>
 
 </head>
 <body>
 
 <div id="app">
+    <!--
     <div class="box">
         <g-input value="张三" @change="inputChange" v-model="message"></g-input>
         <p>{{message}}</p>
@@ -119,6 +114,11 @@
                 <g-footer class="footer">footer</g-footer>
             </g-layout>
         </g-layout>
+    </div>
+    -->
+
+    <div class="box">
+        <button @click="showToast">按钮</button>
     </div>
 
 
