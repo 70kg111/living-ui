@@ -1,5 +1,5 @@
 <template>
-    <div class="toast" ref="wrapper">
+    <div class="toast" ref="wrapper" :class="toastClasses">
         <slot></slot>
         <div class="line" ref="line"></div>
         <span class="close" v-if="closeButton" @click="onClickClose">{{closeButton.text}}</span>
@@ -25,6 +25,20 @@
             text: '关闭', callback: undefined
           };
         }
+      },
+      position: {
+        type: String,
+        default: 'top',
+        validator(value) {
+          return ['top', 'middle', 'bottom'].indexOf(value) >= 0;
+        }
+      }
+    },
+    computed: {
+      toastClasses() {
+        return {
+          [`position-${this.position}`]: true
+        };
       }
     },
     mounted() {
@@ -89,6 +103,22 @@
             margin-left: 16px;
             border: 1px solid #999999;
             height: 100%;
+        }
+
+        &.position-top {
+            top: 5%;
+            transform: translateX(-50%);
+        }
+
+        &.position-middle {
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        &.position-bottom {
+            top: 95%;
+            transform: translateX(-50%);
         }
     }
 </style>

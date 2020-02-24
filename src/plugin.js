@@ -6,6 +6,7 @@ export default {
       let Constructor = Vue.extend(Toast);
       let toast = new Constructor({
         propsData: {
+          position:'top',
           text: '关闭',
           callback: () => {
             console.log('点击了关闭');
