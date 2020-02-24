@@ -47,9 +47,20 @@
             margin: 20px;
         }
 
-        .demo{
-            border: 1px solid blue;
-            min-height: 100px;
+        .sider{
+            background: #333333;
+            width: 200px;
+        }
+        .sider.fade-enter,.sider.fade-leave-to{
+            margin-left: -200px;
+        }
+        .header{
+            background: #999999;
+            height: 100px;
+        }
+        .footer{
+            background: #666666;
+            height: 100px;
         }
     </style>
 
@@ -101,11 +112,11 @@
 
     <div class="box">
         <g-layout>
-            <g-sider>sider</g-sider>
+            <g-sider class="sider">sider</g-sider>
             <g-layout>
-                <g-header class="demo">header</g-header>
-                <g-content class="demo">content</g-content>
-                <g-footer class="demo">footer</g-footer>
+                <g-header class="header">header</g-header>
+                <g-content class="content">content</g-content>
+                <g-footer class="footer">footer</g-footer>
             </g-layout>
         </g-layout>
     </div>
