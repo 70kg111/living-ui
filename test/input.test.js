@@ -71,9 +71,7 @@ describe('Input', () => {
           vm.$on(eventName, callback);
           let event = new Event(eventName);
           Object.defineProperty(
-            event, 'target', {
-              value: {value: 'hi'}, enumerable: true
-            }
+            event, 'target', {value: {value: 'hi'}, enumerable: true}
           );
           let inputElement = vm.$el.querySelector('input');
           inputElement.dispatchEvent(event);
