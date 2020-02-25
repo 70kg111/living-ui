@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/70kg111/living-ui#readme",
   "dependencies": {
+    "sass-loader": "^8.0.2",
     "vue": "^2.6.11",
     "vue-hot-reload-api": "^2.3.4"
   },

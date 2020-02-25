@@ -3,14 +3,22 @@ module.exports = {
   description: '一个易用的UI框架',
   themeConfig: {
     sidebar: [
-      '/',
-      '/install/',
-      '/get-started/',
+      {
+        title: '入门',
+        children: [
+          '/install/',
+          '/get-started/',
+        ]
+      },
+      {
+        title: '组件',
+        children: ['/components/button']
+      }
     ],
     nav: [
-      { text: '主页', link: '/' },
-      { text: '源码', link: '/guide/' },
-      { text: 'GitHub', link: 'https://github.com/70kg111' },
+      {text: '主页', link: '/'},
+      {text: '源码', link: 'https://github.com/70kg111/living-ui'},
+      {text: 'GitHub', link: 'https://github.com/70kg111'},
     ]
   }
 };
