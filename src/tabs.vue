@@ -5,10 +5,12 @@
 </template>
 
 <script lang="js">
+  import Vue from 'vue';
+
   export default {
     name: 'GuluTabs',
     props: {
-      selectedTab: {
+      selected: {
         type: String,
         required: true,
       },
@@ -20,9 +22,18 @@
         }
       }
     },
-
-    created() {
-      //this.$emit('update:selected','xxx')
+    data() {
+      return {
+        eventBus: new Vue()
+      };
+    },
+    mounted() {
+      this.$emit('update:selected', this.selected);
+    },
+    provide() {
+      return {
+        eventBus: new Vue()
+      };
     }
   };
 </script>
