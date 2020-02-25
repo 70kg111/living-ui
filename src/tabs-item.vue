@@ -63,6 +63,7 @@
 
         &.disabled {
             color: gray;
+            cursor: not-allowed;
         }
     }
 </style>
