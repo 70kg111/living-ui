@@ -11,7 +11,6 @@
 
     </button>
 
-
 </template>
 
 <script lang="js">
@@ -22,7 +21,6 @@
     components: {
       'g-icon': Icon
     },
-    //props: ['icon', 'iconPosition']
     props: {
       icon: {},
       loading: {
@@ -36,6 +34,9 @@
           return value === 'left' || value === 'right';
         }
       }
+    },
+    mounted() {
+      import('./iconfonts.js').then(icon => {});
     }
   };
 </script>
