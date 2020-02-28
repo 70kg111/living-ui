@@ -1,15 +1,10 @@
 <template>
     <div>
         <g-button>默认按钮</g-button>
-        <g-button icon="setting">默认按钮</g-button>
-        <g-button :loading="true">默认按钮</g-button>
-        <g-button disabled>默认按钮</g-button>
-
-        <pre>
-            <code>
-                {{content}}
-            </code>
-        </pre>
+        <g-button icon="setting">设置</g-button>
+        <g-button icon="download">下载</g-button>
+        <g-button icon="thumbs-up">点赞</g-button>
+        <g-button :loading="true">登录中</g-button>
     </div>
 </template>
 
@@ -20,16 +15,6 @@
     name: 'button-demos',
     components: {
       'g-button': Button
-    },
-    data(){
-      return {
-        content:`
-            <g-button>默认按钮</g-button>
-            <g-button icon="setting">默认按钮</g-button>
-            <g-button :loading="true">默认按钮</g-button>
-            <g-button disabled>默认按钮</g-button>
-        `
-      }
     }
   };
 </script>

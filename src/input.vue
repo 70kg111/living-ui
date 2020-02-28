@@ -17,7 +17,9 @@
   import Icon from './icon';
 
   export default {
-    components: {Icon},
+    components: {
+      'g-icon': Icon
+    },
     name: 'GuluInput',
     props: {
       value: {
@@ -35,6 +37,9 @@
         type: String
       },
 
+    },
+    mounted() {
+      import('./iconfonts.js').then(icon => {});
     }
   };
 </script>

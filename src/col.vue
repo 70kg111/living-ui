@@ -21,7 +21,7 @@
           let keys = Object.keys(value);
           let valid = true;
           keys.forEach(key => {
-            if (!['span', 'offset'].indexOf(key)>=0) {
+            if (!['span', 'offset'].indexOf(key) >= 0) {
               valid = false;
             }
           });
@@ -50,9 +50,10 @@
         ];
       },
       colStyle() {
+        let {gutter} = this;
         return {
-          paddingLeft: this.gutter / 2 + 'px',
-          paddingRight: this.gutter / 2 + 'px',
+          marginLeft: gutter / 2 + 'px',
+          marginRight: gutter / 2 + 'px',
         };
       }
     }
@@ -63,9 +64,13 @@
 <style lang="scss" scoped>
     .col {
         width: 50%;
-        height: 100px;
-        border: 1px solid green;
-
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 10px;
+        background-color: rgb(238, 238, 238);
+        border: 1px solid rgb(204, 204, 204);
         $class-prefix: col-;
         @for $n from 1 through 24 {
             &.#{$class-prefix}#{$n} {
